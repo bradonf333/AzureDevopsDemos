@@ -26,3 +26,9 @@ steps:
     testResultsFiles: '**/*.trx'
     mergeTestResults: true
     failTaskOnFailedTests: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)AzureDevOpsDemoApp/bin/$(buildConfiguration)/netcoreapp2.2/'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
