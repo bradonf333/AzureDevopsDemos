@@ -19,6 +19,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
+    arguments: '--collect:"Code Coverage"'
 
 - task: PublishTestResults@2
   inputs:
